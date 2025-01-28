@@ -1,0 +1,8 @@
+[package]
+name = "orca-apt-swarm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+#ratzilla = "0.0.0-alpha.5"
+ratzilla = { git = "https://github.com/orhun/ratzilla" }
