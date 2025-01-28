@@ -9,6 +9,7 @@ body {
     align-content: center;
     background-color: #121212;
     transform: scale(0.50);
+    touch-action: none;
 }
 pre {
     font-family: monospace;
