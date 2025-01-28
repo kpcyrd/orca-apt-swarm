@@ -1,3 +1,4 @@
+use std::cmp;
 use std::io;
 
 use ratzilla::ratatui::{
@@ -57,12 +58,27 @@ fn render_footer(frame: &mut Frame<'_>, area: Rect) {
 }
 */
 
+fn square(area: Rect) -> Rect {
+    let normalized_width = area.width / 2;
+    let capped_height = cmp::min(normalized_width, area.height);
+    let padding_offset = (area.height - capped_height) / 2;
+    let area = Rect {
+        x: area.x,
+        y: area.y + padding_offset,
+        width: area.width,
+        height: capped_height,
+    };
+    area
+}
+
 fn main() -> io::Result<()> {
     let backend = DomBackend::new()?;
     let terminal = Terminal::new(backend)?;
 
     terminal.draw_web(move |f| {
         let area = f.area();
+        let area = square(area);
+
         let container = widgets::Block::bordered()
             .title("apt-swarm p2p node locations")
             .border_style(Style::new().gray());
