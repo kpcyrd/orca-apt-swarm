@@ -1,2 +1,4 @@
 [build]
 minify = "on_release"
+# this didn't work for me correctly (2025-01-28)
+no_sri = true
