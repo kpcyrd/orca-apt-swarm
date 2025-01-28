@@ -8,7 +8,7 @@ body {
     align-items: center;
     align-content: center;
     background-color: #121212;
-    transform: scale(0.99);
+    transform: scale(0.50);
 }
 pre {
     font-family: monospace;

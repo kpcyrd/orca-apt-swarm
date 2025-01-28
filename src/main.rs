@@ -1,3 +1,5 @@
+mod hd;
+
 use std::cmp;
 use std::io;
 
@@ -9,7 +11,7 @@ use ratzilla::ratatui::{
     Frame, Terminal,
 };
 
-use ratzilla::{DomBackend, WebRenderer};
+use ratzilla::WebRenderer;
 
 fn render_map(frame: &mut Frame<'_>, area: Rect) {
     let canvas = canvas::Canvas::default()
@@ -62,17 +64,16 @@ fn square(area: Rect) -> Rect {
     let normalized_width = area.width / 2;
     let capped_height = cmp::min(normalized_width, area.height);
     let padding_offset = (area.height - capped_height) / 2;
-    let area = Rect {
+    Rect {
         x: area.x,
         y: area.y + padding_offset,
         width: area.width,
         height: capped_height,
-    };
-    area
+    }
 }
 
 fn main() -> io::Result<()> {
-    let backend = DomBackend::new()?;
+    let backend = hd::HdBackend::new()?;
     let terminal = Terminal::new(backend)?;
 
     terminal.draw_web(move |f| {
