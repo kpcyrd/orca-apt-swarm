@@ -41,6 +41,8 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             ctx.print(-100.0, 20.0, "X".fg(red).bold());
             // hawaii
             ctx.print(-156.0, 19.0, "X".fg(red).bold());
+            // kazakhstan
+            ctx.print(78.0, 38.0, "X".fg(red).bold());
         });
     frame.render_widget(canvas, area);
 }
