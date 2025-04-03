@@ -4,11 +4,11 @@ use std::cmp;
 use std::io;
 
 use ratzilla::ratatui::{
+    Frame, Terminal,
     layout::Rect,
     style::{Color, Style, Stylize},
     symbols::Marker,
     widgets::{self, canvas},
-    Frame, Terminal,
 };
 
 use ratzilla::WebRenderer;

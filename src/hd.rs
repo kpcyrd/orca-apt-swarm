@@ -9,8 +9,9 @@ use ratzilla::ratatui::{
 use ratzilla::utils;
 use std::{cell::RefCell, io::Result as IoResult, rc::Rc};
 use web_sys::{
-    wasm_bindgen::{prelude::Closure, JsCast},
-    window, Document, Element, Window,
+    Document, Element, Window,
+    wasm_bindgen::{JsCast, prelude::Closure},
+    window,
 };
 
 const MULTIPLIER: u16 = 2;

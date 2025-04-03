@@ -1,9 +1,8 @@
 [package]
 name = "orca-apt-swarm"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-#ratzilla = "0.0.0-alpha.5"
-ratzilla = { git = "https://github.com/orhun/ratzilla" }
+ratzilla = "0.0.5"
 web-sys = { version = "0.3.77", default-features = false }
