@@ -1,23 +1,25 @@
 mod hd;
 
+use ratzilla::{
+    WebRenderer,
+    ratatui::{
+        Frame, Terminal,
+        layout::Rect,
+        style::{Color, Style, Stylize},
+        symbols::Marker,
+        widgets::{self, canvas},
+    },
+};
 use std::cmp;
 use std::io;
 
-use ratzilla::ratatui::{
-    Frame, Terminal,
-    layout::Rect,
-    style::{Color, Style, Stylize},
-    symbols::Marker,
-    widgets::{self, canvas},
-};
-
-use ratzilla::WebRenderer;
+const RED: Color = Color::Rgb(174, 31, 31);
 
 fn render_map(frame: &mut Frame<'_>, area: Rect) {
     let canvas = canvas::Canvas::default()
         .marker(Marker::HalfBlock)
         .x_bounds([-180.0, 180.0])
-        .y_bounds([-90.0, 90.0])
+        .y_bounds([-126.0, 126.0])
         .paint(|ctx| {
             ctx.draw(&canvas::Map {
                 resolution: canvas::MapResolution::High,
@@ -25,24 +27,30 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             });
 
             let red = Color::Rgb(174, 31, 31);
-            // germany
-            ctx.print(10.0, 48.0, "X".fg(red).bold());
+            // helsinki
+            ctx.print(24.9, 60.1, "X".fg(red).bold());
             // ukraine
-            ctx.print(22.0, 47.0, "X".fg(red).bold());
+            ctx.print(30.5, 50.4, "X".fg(red).bold());
             // south africa
-            ctx.print(28.0, -26.0, "X".fg(red).bold());
+            ctx.print(28.0, -26.2, "X".fg(red).bold());
             // saudi arabia
-            ctx.print(45.0, 24.0, "X".fg(red).bold());
+            ctx.print(46.7, 24.6, "X".fg(red).bold());
             // hong kong
-            ctx.print(115.0, 23.0, "X".fg(red).bold());
+            ctx.print(114.1, 22.2, "X".fg(red).bold());
             // miami
-            ctx.print(-81.0, 26.0, "X".fg(red).bold());
+            ctx.print(-80.2, 25.8, "X".fg(red).bold());
             // mexico
-            ctx.print(-100.0, 20.0, "X".fg(red).bold());
+            ctx.print(-100.3, 20.6, "X".fg(red).bold());
             // hawaii
-            ctx.print(-156.0, 19.0, "X".fg(red).bold());
+            ctx.print(-157.8, 21.3, "X".fg(red).bold());
             // kazakhstan
-            ctx.print(78.0, 38.0, "X".fg(red).bold());
+            ctx.print(76.9, 43.2, "X".fg(red).bold());
+            // russia
+            ctx.print(37.6, 55.0, "X".fg(red).bold());
+            // australia
+            ctx.print(151.2, -33.9, "X".fg(red).bold());
+            // brazil
+            ctx.print(-46.3, -23.5, "X".fg(red).bold());
         });
     frame.render_widget(canvas, area);
 }
