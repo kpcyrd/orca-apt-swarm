@@ -15,6 +15,10 @@ use std::io;
 
 const RED: Color = Color::Rgb(174, 31, 31);
 
+fn print_marker(ctx: &mut canvas::Context, lon: f64, lat: f64) {
+    ctx.print(lon, lat, "X".fg(RED).bg(Color::Black).bold());
+}
+
 fn render_map(frame: &mut Frame<'_>, area: Rect) {
     let canvas = canvas::Canvas::default()
         .marker(Marker::HalfBlock)
@@ -26,31 +30,30 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
                 color: Color::Rgb(0, 118, 0),
             });
 
-            let red = Color::Rgb(174, 31, 31);
             // helsinki
-            ctx.print(24.9, 60.1, "X".fg(red).bold());
+            print_marker(ctx, 24.9, 60.1);
             // ukraine
-            ctx.print(30.5, 50.4, "X".fg(red).bold());
+            print_marker(ctx, 30.5, 50.4);
             // south africa
-            ctx.print(28.0, -26.2, "X".fg(red).bold());
+            print_marker(ctx, 28.0, -26.2);
             // saudi arabia
-            ctx.print(46.7, 24.6, "X".fg(red).bold());
+            print_marker(ctx, 46.7, 24.6);
             // hong kong
-            ctx.print(114.1, 22.2, "X".fg(red).bold());
+            print_marker(ctx, 114.1, 22.2);
             // miami
-            ctx.print(-80.2, 25.8, "X".fg(red).bold());
+            print_marker(ctx, -80.2, 25.8);
             // mexico
-            ctx.print(-100.3, 20.6, "X".fg(red).bold());
+            print_marker(ctx, -100.3, 20.6);
             // hawaii
-            ctx.print(-157.8, 21.3, "X".fg(red).bold());
+            print_marker(ctx, -157.8, 21.3);
             // kazakhstan
-            ctx.print(76.9, 43.2, "X".fg(red).bold());
+            print_marker(ctx, 76.9, 43.2);
             // russia
-            ctx.print(37.6, 55.0, "X".fg(red).bold());
+            print_marker(ctx, 37.6, 55.0);
             // australia
-            ctx.print(151.2, -33.9, "X".fg(red).bold());
+            print_marker(ctx, 151.2, -33.9);
             // brazil
-            ctx.print(-46.3, -23.5, "X".fg(red).bold());
+            print_marker(ctx, -46.3, -23.5);
         });
     frame.render_widget(canvas, area);
 }
