@@ -56,7 +56,8 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             print_marker(ctx, 44.4, 33.3);
             // nepal
             print_marker(ctx, 85.32, 27.71);
-
+            // kenya
+            print_marker(ctx, 36.83, -1.28);
         });
     frame.render_widget(canvas, area);
 }
