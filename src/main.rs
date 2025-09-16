@@ -52,8 +52,6 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             print_marker(ctx, 37.6, 55.0);
             // australia
             print_marker(ctx, 151.2, -33.9);
-            // brazil
-            print_marker(ctx, -46.3, -23.5);
             // iraq
             print_marker(ctx, 44.4, 33.3);
             // nepal
