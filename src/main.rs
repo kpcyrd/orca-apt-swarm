@@ -32,8 +32,6 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
 
             // helsinki
             print_marker(ctx, 24.9, 60.1);
-            // ukraine
-            print_marker(ctx, 30.5, 50.4);
             // south africa
             print_marker(ctx, 28.0, -26.2);
             // saudi arabia
@@ -60,6 +58,8 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             print_marker(ctx, 36.83, -1.28);
             // sweden
             print_marker(ctx, 18.056, 59.324);
+            // iceland
+            print_marker(ctx, -21.945, 64.060);
         });
     frame.render_widget(canvas, area);
 }
