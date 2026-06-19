@@ -36,30 +36,22 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             print_marker(ctx, 28.0, -26.2);
             // saudi arabia
             print_marker(ctx, 46.7, 24.6);
-            // hong kong
-            print_marker(ctx, 114.1, 22.2);
             // miami
             print_marker(ctx, -80.2, 25.8);
             // mexico
             print_marker(ctx, -100.3, 20.6);
             // hawaii
             print_marker(ctx, -157.8, 21.3);
-            // kazakhstan
-            print_marker(ctx, 76.9, 43.2);
             // russia
             print_marker(ctx, 37.6, 55.0);
             // australia
             print_marker(ctx, 151.2, -33.9);
             // iraq
             print_marker(ctx, 44.4, 33.3);
-            // nepal
-            print_marker(ctx, 85.32, 27.71);
             // kenya
             print_marker(ctx, 36.83, -1.28);
             // sweden
             print_marker(ctx, 18.056, 59.324);
-            // iceland
-            print_marker(ctx, -21.945, 64.060);
         });
     frame.render_widget(canvas, area);
 }
