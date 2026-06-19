@@ -52,6 +52,10 @@ fn render_map(frame: &mut Frame<'_>, area: Rect) {
             print_marker(ctx, 36.83, -1.28);
             // sweden
             print_marker(ctx, 18.056, 59.324);
+            // azerbaijan
+            print_marker(ctx, 49.88, 40.37);
+            // china
+            print_marker(ctx, 116.39, 39.91);
         });
     frame.render_widget(canvas, area);
 }
